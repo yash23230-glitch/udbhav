@@ -208,23 +208,6 @@
 
   </div>
 
-  <script>
-    document.querySelectorAll('.btn-card').forEach(card => {
-      const url = card.dataset.url;
-      card.addEventListener('click', () => {
-        if (!url || url.includes('REPLACE_FORM')) {
-          alert('Please replace the placeholder form URL with your real Google Form link.');
-          return;
-        }
-        window.open(url, '_blank', 'noopener');
-      });
-      card.addEventListener('keydown', e => {
-        if (e.key === 'Enter' || e.key === ' ') {
-          e.preventDefault();
-          card.click();
-        }
-      });
-    });
-  </script>
+  
 </body>
 </html>
