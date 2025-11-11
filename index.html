@@ -207,7 +207,7 @@
     <svg class="accent gear" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="#a87a5a" d="M487.9 315.8l-54.3-31.3a195 195 0 0 0 0-56.9l54.3-31.3c5.8-3.4 8.5-10.3 6.6-16.7l-24.3-79.5c-1.9-6.4-7.9-10.8-14.5-10.8h-62.3a197 197 0 0 0-27.9-28.3V24.3c0-6.6-4.4-12.6-10.8-14.5L275.6.5c-6.4-1.9-13.3.8-16.7 6.6l-31.3 54.3a195 195 0 0 0-56.9 0L139.4 7.1c-3.4-5.8-10.3-8.5-16.7-6.6L43.2 24.3C36.8 26.2 32.4 32.2 32.4 38.8v62.3a197 197 0 0 0-28.3 27.9H4.3c-6.6 0-12.6 4.4-14.5 10.8l-24.3 79.5c-1.9 6.4.8 13.3 6.6 16.7l54.3 31.3a195 195 0 0 0 0 56.9L-28 392.6c-5.8 3.4-8.5 10.3-6.6 16.7l24.3 79.5c1.9 6.4 7.9 10.8 14.5 10.8h62.3a197 197 0 0 0 27.9 28.3v62.3c0 6.6 4.4 12.6 10.8 14.5l79.5 24.3c6.4 1.9 13.3-.8 16.7-6.6l31.3-54.3a195 195 0 0 0 56.9 0l31.3 54.3c3.4 5.8 10.3 8.5 16.7 6.6l79.5-24.3c6.4-1.9 10.8-7.9 10.8-14.5v-62.3a197 197 0 0 0 27.9-28.3h62.3c6.6 0 12.6-4.4 14.5-10.8l24.3-79.5c1.9-6.4-.8-13.3-6.6-16.7z"/></svg>
 
   </div>
-
+<script> document.querySelectorAll('.btn-card').forEach(card => { const url = card.dataset.url; card.addEventListener('click', () => { if (!url || url.includes('REPLACE_FORM')) { alert('Please replace the placeholder form URL with your real Google Form link.'); return; } window.open(url, '_blank', 'noopener'); }); card.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); card.click(); } }); }); </script>
   
 </body>
 </html>
