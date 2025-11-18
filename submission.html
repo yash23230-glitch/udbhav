@@ -46,12 +46,19 @@
       display: flex;
       flex-direction: column;
       align-items: center;
+
+      margin: 0 auto; /* ⭐ FIX: Proper horizontal centering */
     }
 
     header {
       padding: 42px 20px 20px;
-      text-align: center;        /* CENTER EVERYTHING */
       width: 100%;
+
+      display: flex;            /* ⭐ FIX */
+      flex-direction: column;
+      align-items: center;      /* ⭐ FIX */
+      justify-content: center;  /* ⭐ FIX */
+      text-align: center;
     }
 
     .brand-title {
@@ -61,7 +68,7 @@
       margin: 0;
       color: var(--primary-brown);
       text-transform: uppercase;
-      display: block;            /* ensures perfect centering */
+      display: block;
     }
 
     .tag {
@@ -136,7 +143,7 @@
   <div class="scene" role="application" aria-label="UDBHAV Forms Portal">
 
     <header>
-      <div class="brand-title">UDBHAV Submissions</div>
+      <div class="brand-title">UDBHAV SUBMISSIONS</div>
       <div class="tag">-Rising to Redefine Possibilities-</div>
     </header>
 
