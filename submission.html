@@ -50,7 +50,7 @@
 
     header {
       padding: 42px 20px 20px;
-      text-align: center;
+      text-align: center;        /* CENTER EVERYTHING */
       width: 100%;
     }
 
@@ -61,6 +61,7 @@
       margin: 0;
       color: var(--primary-brown);
       text-transform: uppercase;
+      display: block;            /* ensures perfect centering */
     }
 
     .tag {
@@ -123,13 +124,6 @@
     .btn-title { font-weight: 900; font-size: 16px; }
     .btn-sub { font-size: 13px; color: var(--muted); }
 
-    footer {
-      padding: 18px 44px;
-      text-align: center;
-      color: var(--muted);
-      border-top: 1px solid rgba(0,0,0,0.04);
-    }
-
     @media (max-width: 640px) {
       .brand-title { font-size: 42px; }
       .grid { grid-template-columns: 1fr; }
@@ -142,7 +136,7 @@
   <div class="scene" role="application" aria-label="UDBHAV Forms Portal">
 
     <header>
-      <div class="brand-title">UDBHAV<br>Submissions</div>
+      <div class="brand-title">UDBHAV Submissions</div>
       <div class="tag">-Rising to Redefine Possibilities-</div>
     </header>
 
