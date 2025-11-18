@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>UDBHAV Submissions Portal </title>
+  <meta name="description" content="Udbhav submission portal" />
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Poppins:wght@400;600;700&display=swap');
+
+    :root {
+      --primary-brown: #6b3f2a;
+      --accent-brown: #8a4b31;
+      --gold: #e6b67a;
+      --paper-base: #eeddc9;
+      --muted: rgba(0, 0, 0, 0.55);
+    }
+
+    * { box-sizing: border-box; }
+    html, body { height: 100%; margin: 0; }
+
+    body {
+      font-family: 'Poppins', system-ui, sans-serif;
+      color: var(--primary-brown);
+      background: var(--paper-base);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 36px;
+    }
+
+    .scene {
+      width: 100%;
+      max-width: 1100px;
+      border-radius: 18px;
+      overflow: hidden;
+      position: relative;
+      background: linear-gradient(180deg, rgba(255,255,255,0.65), rgba(255,255,255,0.25)),
+                  radial-gradient(1000px 400px at 15% 15%, rgba(120,70,40,0.06), transparent 15%),
+                  radial-gradient(800px 300px at 85% 85%, rgba(150,80,45,0.05), transparent 10%),
+                  var(--paper-base);
+      box-shadow: 0 30px 80px rgba(20, 10, 8, 0.45);
+      border: 6px solid rgba(100, 60, 40, 0.06);
+    }
+
+    header {
+      padding: 42px 44px 20px;
+      text-align: center;
+      position: relative;
+    }
+
+    .brand-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 64px;
+      letter-spacing: 2px;
+      margin: 0;
+      color: var(--primary-brown);
+      text-transform: uppercase;
+    }
+
+    .tag {
+      margin-top: 6px;
+      font-weight: 600;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .content {
+      padding: 20px 44px 44px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      position: relative;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 18px;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .btn-card {
+      background: linear-gradient(180deg, rgba(255,255,255,0.95), rgba(250,240,225,0.9));
+      padding: 18px;
+      border-radius: 12px;
+      border: 1px solid rgba(0,0,0,0.05);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      transition: transform .14s ease, box-shadow .14s ease;
+      box-shadow: 0 10px 26px rgba(20,10,8,0.08);
+    }
+
+    .btn-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 30px 80px rgba(20,10,8,0.12);
+    }
+
+    .btn-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(180deg, var(--accent-brown), #6a3a24);
+      color: white;
+      font-weight: 800;
+      flex-shrink: 0;
+    }
+
+    .btn-text { text-align: left; }
+    .btn-title { font-weight: 900; font-size: 15px; }
+    .btn-sub { font-size: 12px; color: var(--muted); }
+
+    footer {
+      padding: 18px 44px;
+      text-align: center;
+      color: var(--muted);
+      border-top: 1px solid rgba(0,0,0,0.04);
+    }
+
+    .accent {
+      position: absolute;
+      opacity: 0.15;
+      pointer-events: none;
+    }
+
+    .accent.atom {
+      top: 20%;
+      left: 10%;
+      width: 140px;
+    }
+
+    .accent.rocket {
+      bottom: 10%;
+      right: 10%;
+      width: 180px;
+    }
+
+    .accent.gear {
+      bottom: 30%;
+      left: 5%;
+      width: 120px;
+    }
+
+    @media (max-width: 640px) {
+      .brand-title { font-size: 42px; }
+      .grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <div class="scene" role="application" aria-label="UDBHAV Forms Portal">
+
+    <header>
+      <div class="brand-title">UDBHAV  <br>submissions</div>
+      <div class="tag">-Rising to Redefine Possibilities-</div>
+    </header>
+
+    <div class="content">
+      <div class="grid" id="formsGrid">
+        <div class="btn-card" data-url="https://docs.google.com/forms/d/e/1FAIpQLScyzGjxX7wI1klXjBSDHcvOr0lgMEUKDVIzCh7aE6jPVzm-WA/viewform?usp=header">
+          <div class="btn-icon">1</div>
+          <div class="btn-text"><div class="btn-title">Udbhav Bites</div><div class="btn-sub">Alchemy of kitchen</div></div>
+        </div>
+        <div class="btn-card" data-url="https://docs.google.com/forms/d/e/1FAIpQLSdtf7g7obKCWsJ1uatAVo323C2jnpWzE0EcjVWY1ePiaf0ENg/viewform?usp=header">
+          <div class="btn-icon">2</div>
+          <div class="btn-text"><div class="btn-title">Swaranjali</div><div class="btn-sub">Music Production</div></div>
+        </div>
+        <div class="btn-card" data-url="https://docs.google.com/forms/d/e/1FAIpQLSfix_co_-JkfpN-ASmjNw0VMTGOLSMCidStLZSVdNtbrd7IOg/viewform?usp=header">
+          <div class="btn-icon">3</div>
+          <div class="btn-text"><div class="btn-title">Rangmanthan</div><div class="btn-sub">Film Production</div></div>
+        </div>
+        <div class="btn-card" data-url="https://docs.google.com/forms/d/e/1FAIpQLSdqEEU_Y5Q2y9LoIUHFXMlQ7qWRpKFqFuioTuKWAzxhMWXoCQ/viewform?usp=header">
+          <div class="btn-icon">4</div>
+          <div class="btn-text"><div class="btn-title">Navodaya</div><div class="btn-sub">Shark Tank</div></div>
+        </div>
+        <div class="btn-card" data-url="https://docs.google.com/forms/d/e/1FAIpQLSexuv6X7XoPnFNHgMDeUPIAn_rkqVKc4RWkX9R4UFrWvSMSJA/viewform?usp=header">
+          <div class="btn-icon">5</div>
+          <div class="btn-text"><div class="btn-title">Vichar Saga</div><div class="btn-sub">Thesis Presentation</div></div>
