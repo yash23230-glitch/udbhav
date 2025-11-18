@@ -4,14 +4,13 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>UDBHAV Forms Portal — Centered & Accented</title>
-  <meta name="description" content="Parchment themed portal linking to 7 Google Forms, with centered buttons and distributed accents." />
+  <meta name="description" content="Parchment themed portal linking to Google Forms." />
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Poppins:wght@400;600;700&display=swap');
 
     :root {
       --primary-brown: #6b3f2a;
       --accent-brown: #8a4b31;
-      --gold: #e6b67a;
       --paper-base: #eeddc9;
       --muted: rgba(0, 0, 0, 0.55);
     }
@@ -49,7 +48,7 @@
       position: relative;
     }
 
-    /* 🌟 TOP RIGHT BUTTON */
+    /* TOP RIGHT BUTTON */
     .top-right-btn {
       position: absolute;
       top: 28px;
@@ -140,14 +139,7 @@
     .btn-title { font-weight: 900; font-size: 15px; }
     .btn-sub { font-size: 12px; color: var(--muted); }
 
-    footer {
-      padding: 18px 44px;
-      text-align: center;
-      color: var(--muted);
-      border-top: 1px solid rgba(0,0,0,0.04);
-    }
-
-    /* Accents */
+    /* ACCENTS */
     .accent {
       position: absolute;
       opacity: 0.15;
@@ -165,6 +157,7 @@
     }
   </style>
 </head>
+
 <body>
   <div class="scene" role="application" aria-label="UDBHAV Forms Portal">
 
@@ -178,27 +171,57 @@
     <div class="content">
       <div class="grid" id="formsGrid">
 
-        <!-- Your buttons remain unchanged -->
+        <!-- FORM BUTTONS -->
         <div class="btn-card" data-url="https://docs.google.com/forms/d/e/1FAIpQLSe3acsaibW82HaHbWzb1eLIYVekLDD7UnX42_GlbeVeZ6GWJA/viewform?usp=header">
           <div class="btn-icon">1</div>
           <div class="btn-text"><div class="btn-title">Prashnasphere</div><div class="btn-sub">Science Quiz</div></div>
         </div>
 
-        <!-- ...other cards unchanged... -->
+        <div class="btn-card" data-url="https://docs.google.com/forms/d/e/1FAIpQLSfOj0bDa_DREbiJUdcGLDTu8bVllgBEgmmYH3_-oxg6ERsN8g/viewform?usp=header">
+          <div class="btn-icon">2</div>
+          <div class="btn-text"><div class="btn-title">Swaranjali</div><div class="btn-sub">Music Production</div></div>
+        </div>
+
+        <div class="btn-card" data-url="https://docs.google.com/forms/d/e/1FAIpQLSdckLU-fUmwHC1ssgF2kokKtlHFOBL8YKjtlfnkyZRPfIb1jw/viewform?usp=header">
+          <div class="btn-icon">3</div>
+          <div class="btn-text"><div class="btn-title">Rangmanthan</div><div class="btn-sub">Film Production</div></div>
+        </div>
+
+        <div class="btn-card" data-url="https://docs.google.com/forms/d/e/1FAIpQLSdcGbtlAqp4wIYJf6bF8E-izhKInDsdOCNcYjwuApKEzSTeyQ/viewform?usp=header">
+          <div class="btn-icon">4</div>
+          <div class="btn-text"><div class="btn-title">Navodaya</div><div class="btn-sub">Shark Tank</div></div>
+        </div>
+
+        <div class="btn-card" data-url="https://docs.google.com/forms/d/e/1FAIpQLScEXSq1AjUXnR0FyUTebBtXQ5DhJH57CElGxgNSojR9CbOQ5A/viewform?usp=header">
+          <div class="btn-icon">5</div>
+          <div class="btn-text"><div class="btn-title">Vichar Saga</div><div class="btn-sub">Thesis Presentation</div></div>
+        </div>
+
+        <div class="btn-card" data-url="https://docs.google.com/forms/d/e/1FAIpQLSdc9--Qy_I6Fo8jkNidNHsFnsE1EYC3m0qQLJKr6RMhPVcWMw/viewform?usp=header">
+          <div class="btn-icon">6</div>
+          <div class="btn-text"><div class="btn-title">Chitrasaga</div><div class="btn-sub">Art Expedition</div></div>
+        </div>
 
       </div>
     </div>
 
-    <!-- Script -->
-    <script>
-      document.querySelectorAll('.btn-card').forEach(card => {
-        card.addEventListener('click', () => {
-          const url = card.dataset.url;
-          if (url) window.open(url, '_blank', 'noopener');
-        });
-      });
-    </script>
+    <!-- ACCENTS -->
+    <svg class="accent atom" viewBox="0 0 120 120"><g fill="none" stroke="rgba(106,63,42,0.25)" stroke-width="3"><ellipse cx="60" cy="60" rx="42" ry="20" transform="rotate(24 60 60)"/><ellipse cx="60" cy="60" rx="42" ry="20" transform="rotate(-24 60 60)"/><ellipse cx="60" cy="60" rx="42" ry="20"/></g><circle cx="60" cy="60" r="9" fill="#ff6f5f"/></svg>
+
+    <svg class="accent rocket" viewBox="0 0 512 512"><path d="M424.6 87.4c-67.9 67.9-158.8 124.6-248.5 148.1L128 320l84.5 48.1c23.5-89.7 80.2-180.6 148.1-248.5 50-50 71-35.7 49.9-13.6-21 22.1-36.4 0-36.4 0z" fill="#ffb74d" opacity="0.9"/><circle cx="360" cy="120" r="36" fill="#fff"/></svg>
+
+    <svg class="accent gear" viewBox="0 0 512 512"><path fill="#a87a5a" d="M487.9 315.8l-54.3-31.3a195 195 0 0 0 0-56.9l54.3-31.3c5.8-3.4 8.5-10.3 6.6-16.7l-24.3-79.5c-1.9-6.4-7.9-10.8-14.5-10.8h-62.3a197 197 0 0 0-27.9-28.3V24.3c0-6.6-4.4-12.6-10.8-14.5L275.6.5c-6.4-1.9-13.3.8-16.7 6.6l-31.3 54.3a195 195 0 0 0-56.9 0L139.4 7.1c-3.4-5.8-10.3-8.5-16.7-6.6L43.2 24.3C36.8 26.2 32.4 32.2 32.4 38.8v62.3a197 197 0 0 0-28.3 27.9H4.3c-6.6 0-12.6 4.4-14.5 10.8l-24.3 79.5c-1.9 6.4.8 13.3 6.6 16.7l54.3 31.3a195 195 0 0 0 0 56.9L-28 392.6c-5.8 3.4-8.5 10.3-6.6 16.7l24.3 79.5c1.9 6.4 7.9 10.8 14.5 10.8h62.3a197 197 0 0 0 27.9 28.3v62.3c0 6.6 4.4 12.6 10.8 14.5l79.5 24.3c6.4 1.9 13.3-.8 16.7-6.6l31.3-54.3a195 195 0 0 0 56.9 0l31.3 54.3c3.4 5.8 10.3 8.5 16.7 6.6l79.5-24.3c6.4-1.9 10.8-7.9 10.8-14.5v-62.3a197 197 0 0 0 27.9-28.3h62.3c6.6 0 12.6-4.4 14.5-10.8l24.3-79.5c1.9-6.4-.8-13.3-6.6-16.7z"/></svg>
 
   </div>
+
+  <script>
+    document.querySelectorAll('.btn-card').forEach(card => {
+      card.addEventListener('click', () => {
+        const url = card.dataset.url;
+        if (url) window.open(url, '_blank', 'noopener');
+      });
+    });
+  </script>
+
 </body>
 </html>
