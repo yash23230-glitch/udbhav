@@ -1,248 +1,209 @@
-<!doctype html>
+<!-- Updated HTML with disabled buttons, grayed-out look, and modal popup --><!doctype html>
+
 <html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>UDBHAV Forms Portal — Centered & Accented</title>
-  <meta name="description" content="Parchment themed portal linking to 7 Google Forms, with centered buttons and distributed accents." />
+  <title>UDBHAV Forms Portal — Registrations Closed</title>
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Poppins:wght@400;600;700&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Poppins:wght@400;600;700&display=swap');:root {
+  --primary-brown: #6b3f2a;
+  --accent-brown: #8a4b31;
+  --paper-base: #eeddc9;
+  --muted: rgba(0, 0, 0, 0.55);
+}
 
-    :root {
-      --primary-brown: #6b3f2a;
-      --accent-brown: #8a4b31;
-      --gold: #e6b67a;
-      --paper-base: #eeddc9;
-      --muted: rgba(0, 0, 0, 0.55);
-    }
+body {
+  margin: 0;
+  background: var(--paper-base);
+  font-family: 'Poppins', sans-serif;
+  display: flex;
+  justify-content: center;
+  padding: 40px;
+}
 
-    * { box-sizing: border-box; }
-    html, body { height: 100%; margin: 0; }
+.scene {
+  width: 100%;
+  max-width: 1100px;
+  background: rgba(255,255,255,0.8);
+  border-radius: 18px;
+  box-shadow: 0 30px 80px rgba(20,10,8,0.4);
+  padding-bottom: 40px;
+}
 
-    body {
-      font-family: 'Poppins', system-ui, sans-serif;
-      color: var(--primary-brown);
-      background: var(--paper-base);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 36px;
-    }
+header {
+  text-align: center;
+  padding: 40px 20px 20px;
+  position: relative;
+}
 
-    .scene {
-      width: 100%;
-      max-width: 1100px;
-      border-radius: 18px;
-      overflow: hidden;
-      position: relative;
-      background: linear-gradient(180deg, rgba(255,255,255,0.65), rgba(255,255,255,0.25)),
-                  radial-gradient(1000px 400px at 15% 15%, rgba(120,70,40,0.06), transparent 15%),
-                  radial-gradient(800px 300px at 85% 85%, rgba(150,80,45,0.05), transparent 10%),
-                  var(--paper-base);
-      box-shadow: 0 30px 80px rgba(20, 10, 8, 0.45);
-      border: 6px solid rgba(100, 60, 40, 0.06);
-    }
+.brand-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 64px;
+  margin-bottom: 6px;
+}
 
-    header {
-      padding: 42px 44px 20px;
-      text-align: center;
-      position: relative;
-    }
+.tag {
+  color: var(--muted);
+  font-weight: 600;
+}
 
-    /* =======================
-       SUBMISSIONS BUTTON FIX
-       ======================= */
-    .submissions-btn {
-      position: absolute;
-      top: 20px;
-      right: 20px;
-      background: linear-gradient(180deg, var(--accent-brown), #6a3a24);
-      padding: 10px 20px;
-      border-radius: 12px;
-      color: white;
-      font-weight: 700;
-      cursor: pointer;
-      font-size: 14px;
-      box-shadow: 0 10px 26px rgba(20,10,8,0.12);
-      transition: transform .14s ease, box-shadow .14s ease;
-      text-decoration: none;
-    }
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px;
+  padding: 20px 40px;
+}
 
-    .submissions-btn:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 20px 40px rgba(20,10,8,0.18);
-    }
+.btn-card {
+  padding: 18px;
+  border-radius: 12px;
+  background: rgba(255,255,255,0.7);
+  border: 1px solid rgba(0,0,0,0.1);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: not-allowed;
+  position: relative;
+  opacity: 0.55;
+  filter: grayscale(100%);
+}
 
-    @media (max-width: 640px) {
-      .submissions-btn {
-        top: 14px;
-        right: 14px;
-        padding: 8px 14px;
-        font-size: 12px;
-      }
-    }
+.btn-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  background: var(--accent-brown);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+}
 
-    .brand-title {
-      font-family: 'Playfair Display', serif;
-      font-size: 64px;
-      letter-spacing: 2px;
-      margin: 0;
-      color: var(--primary-brown);
-      text-transform: uppercase;
-    }
+.closed-ribbon {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  background: #b3261e;
+  color: white;
+  padding: 4px 10px;
+  font-size: 10px;
+  border-radius: 6px;
+  font-weight: 700;
+  transform: rotate(12deg);
+}
 
-    .tag {
-      margin-top: 6px;
-      font-weight: 600;
-      color: var(--muted);
-      font-size: 14px;
-    }
+/* Modal */
+.modal-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.55);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(3px);
+}
 
-    .content {
-      padding: 20px 44px 44px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      position: relative;
-    }
+.modal-box {
+  background: white;
+  padding: 30px;
+  width: 90%;
+  max-width: 380px;
+  border-radius: 16px;
+  text-align: center;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.35);
+}
 
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 18px;
-      max-width: 700px;
-      margin: 0 auto;
-    }
+.modal-box h2 {
+  margin-top: 0;
+  font-size: 24px;
+  color: var(--primary-brown);
+}
 
-    .btn-card {
-      background: linear-gradient(180deg, rgba(255,255,255,0.95), rgba(250,240,225,0.9));
-      padding: 18px;
-      border-radius: 12px;
-      border: 1px solid rgba(0,0,0,0.05);
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      transition: transform .14s ease, box-shadow .14s ease;
-      box-shadow: 0 10px 26px rgba(20,10,8,0.08);
-    }
+.close-btn {
+  margin-top: 18px;
+  background: var(--accent-brown);
+  color: white;
+  border: none;
+  padding: 10px 22px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+}
 
-    .btn-card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 30px 80px rgba(20,10,8,0.12);
-    }
-
-    .btn-icon {
-      width: 44px;
-      height: 44px;
-      border-radius: 10px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: linear-gradient(180deg, var(--accent-brown), #6a3a24);
-      color: white;
-      font-weight: 800;
-      flex-shrink: 0;
-    }
-
-    .btn-text { text-align: left; }
-    .btn-title { font-weight: 900; font-size: 15px; }
-    .btn-sub { font-size: 12px; color: var(--muted); }
-
-    footer {
-      padding: 18px 44px;
-      text-align: center;
-      color: var(--muted);
-      border-top: 1px solid rgba(0,0,0,0.04);
-    }
-
-    .accent {
-      position: absolute;
-      opacity: 0.15;
-      pointer-events: none;
-    }
-    .accent.atom { top: 20%; left: 10%; width: 140px; }
-    .accent.rocket { bottom: 10%; right: 10%; width: 180px; }
-    .accent.gear { bottom: 30%; left: 5%; width: 120px; }
-
-    @media (max-width: 640px) {
-      .brand-title { font-size: 42px; }
-      .grid { grid-template-columns: 1fr; }
-    }
   </style>
-</head>
+</head><body>
+<div class="scene">
+  <header>
+    <div class="brand-title">UDBHAV</div>
+    <div class="tag">-Registrations Closed-</div>
+  </header>  <div class="grid"><div class="btn-card">
+  <div class="closed-ribbon">Closed</div>
+  <div class="btn-icon">1</div>
+  <div>
+    <div class="btn-title">Prashnasphere</div>
+    <div class="btn-sub">Science Quiz</div>
+  </div>
+</div>
 
-<body>
-  <div class="scene" role="application">
+<div class="btn-card">
+  <div class="closed-ribbon">Closed</div>
+  <div class="btn-icon">2</div>
+  <div>
+    <div class="btn-title">Swaranjali</div>
+    <div class="btn-sub">Music Production</div>
+  </div>
+</div>
 
-    <header>
-      <!-- TOP RIGHT BUTTON -->
-      <a href="https://udbhavsciencefest.in/submission" class="submissions-btn">Submissions</a>
+<div class="btn-card">
+  <div class="closed-ribbon">Closed</div>
+  <div class="btn-icon">3</div>
+  <div>
+    <div class="btn-title">Rangmanthan</div>
+    <div class="btn-sub">Film Production</div>
+  </div>
+</div>
 
-      <div class="brand-title">UDBHAV</div>
-      <div class="tag">-Rising to Redefine Possibilities-</div>
-    </header>
+<div class="btn-card">
+  <div class="closed-ribbon">Closed</div>
+  <div class="btn-icon">4</div>
+  <div>
+    <div class="btn-title">Navodaya</div>
+    <div class="btn-sub">Shark Tank</div>
+  </div>
+</div>
 
-    <div class="content">
-      <div class="grid" id="formsGrid">
-
-        <div class="btn-card" data-url="https://docs.google.com/forms/d/e/1FAIpQLSe3acsaibW82HaHbWzb1eLIYVekLDD7UnX42_GlbeVeZ6GWJA/viewform?usp=header">
-          <div class="btn-icon">1</div>
-          <div class="btn-text"><div class="btn-title">Prashnasphere</div><div class="btn-sub">Science Quiz</div></div>
-        </div>
-
-        <div class="btn-card" data-url="https://docs.google.com/forms/d/e/1FAIpQLSfOj0bDa_DREbiJUdcGLDTu8bVllgBEgmmYH3_-oxg6ERsN8g/viewform?usp=header">
-          <div class="btn-icon">2</div>
-          <div class="btn-text"><div class="btn-title">Swaranjali</div><div class="btn-sub">Music Production</div></div>
-        </div>
-
-        <div class="btn-card" data-url="https://docs.google.com/forms/d/e/1FAIpQLSdckLU-fUmwHC1ssgF2kokKtlHFOBL8YKjtlfnkyZRPfIb1jw/viewform?usp=header">
-          <div class="btn-icon">3</div>
-          <div class="btn-text"><div class="btn-title">Rangmanthan</div><div class="btn-sub">Film Production</div></div>
-        </div>
-
-        <div class="btn-card" data-url="https://docs.google.com/forms/d/e/1FAIpQLSdcGbtlAqp4wIYJf6bF8E-izhKInDsdOCNcYjwuApKEzSTeyQ/viewform?usp=header">
-          <div class="btn-icon">4</div>
-          <div class="btn-text"><div class="btn-title">Navodaya</div><div class="btn-sub">Shark Tank</div></div>
-        </div>
-
-        <div class="btn-card" data-url="https://docs.google.com/forms/d/e/1FAIpQLScEXSq1AjUXnR0FyUTebBtXQ5DhJH57CElGxgNSojR9CbOQ5A/viewform?usp=header">
-          <div class="btn-icon">5</div>
-          <div class="btn-text"><div class="btn-title">Vichar Saga</div><div class="btn-sub">Thesis Presentation</div></div>
-        </div>
-
-        
-
-    <!-- Accents (unchanged) -->
-    <svg class="accent atom" viewBox="0 0 120 120"><g fill="none" stroke="rgba(106,63,42,0.25)" stroke-width="3"><ellipse cx="60" cy="60" rx="42" ry="20" transform="rotate(24 60 60)"/><ellipse cx="60" cy="60" rx="42" ry="20" transform="rotate(-24 60 60)"/><ellipse cx="60" cy="60" rx="42" ry="20"/></g><circle cx="60" cy="60" r="9" fill="#ff6f5f" /></svg>
-
-    <svg class="accent rocket" viewBox="0 0 512 512"><path d="M424.6 87.4c-67.9 67.9-158.8 124.6-248.5 148.1L128 320l84.5 48.1c23.5-89.7 80.2-180.6 148.1-248.5 50-50 71-35.7 49.9-13.6-21 22.1-36.4 0-36.4 0z" fill="#ffb74d" opacity="0.9"/><circle cx="360" cy="120" r="36" fill="#fff"/></svg>
-
-    <svg class="accent gear" viewBox="0 0 512 512"><path fill="#a87a5a" d="M487.9 315.8l-54.3-31.3a195 195 0 0 0 0-56.9l54.3-31.3c5.8-3.4 8.5-10.3 6.6-16.7l-24.3-79.5c-1.9-6.4-7.9-10.8-14.5-10.8h-62.3a197 197 0 0 0-27.9-28.3V24.3c0-6.6-4.4-12.6-10.8-14.5L275.6.5c-6.4-1.9-13.3.8-16.7 6.6l-31.3 54.3a195 195 0 0 0-56.9 0L139.4 7.1c-3.4-5.8-10.3-8.5-16.7-6.6L43.2 24.3C36.8 26.2 32.4 32.2 32.4 38.8v62.3a197 197 0 0 0-28.3 27.9H4.3c-6.6 0-12.6 4.4-14.5 10.8l-24.3 79.5c-1.9 6.4.8 13.3 6.6 16.7l54.3 31.3a195 195 0 0 0 0 56.9L-28 392.6c-5.8 3.4-8.5 10.3-6.6 16.7l24.3 79.5c1.9 6.4 7.9 10.8 14.5 10.8h62.3a197 197 0 0 0 27.9 28.3v62.3c0 6.6 4.4 12.6 10.8 14.5l79.5 24.3c6.4 1.9 13.3-.8 16.7-6.6l31.3-54.3a195 195 0 0 0 56.9 0l31.3 54.3c3.4 5.8 10.3 8.5 16.7 6.6l79.5-24.3c6.4-1.9 10.8-7.9 10.8-14.5v-62.3a197 197 0 0 0 27.9-28.3h62.3c6.6 0 12.6-4.4 14.5-10.8l24.3-79.5c1.9-6.4-.8-13.3-6.6-16.7z"/></svg>
+<div class="btn-card">
+  <div class="closed-ribbon">Closed</div>
+  <div class="btn-icon">5</div>
+  <div>
+    <div class="btn-title">Vichar Saga</div>
+    <div class="btn-sub">Thesis Presentation</div>
+  </div>
+</div>
 
   </div>
+</div><!-- Modal --><div class="modal-bg" id="modalBg">
+  <div class="modal-box">
+    <h2>Registration is Full</h2>
+    <p>All seats for this event have been filled.</p>
+    <button class="close-btn" onclick="closeModal()">OK</button>
+  </div>
+</div><script>
+  const modal = document.getElementById('modalBg');
 
-  <script>
-    document.querySelectorAll('.btn-card').forEach(card => {
-      const url = card.dataset.url;
-      card.addEventListener('click', () => {
-        if (!url || url.includes('REPLACE_FORM')) {
-          alert('Please replace the placeholder form URL with your real Google Form link.');
-          return;
-        }
-        window.open(url, '_blank', 'noopener');
-      });
-
-      card.addEventListener('keydown', e => {
-        if (e.key === 'Enter' || e.key === ' ') {
-          e.preventDefault();
-          card.click();
-        }
-      });
+  document.querySelectorAll('.btn-card').forEach(card => {
+    card.addEventListener('click', () => {
+      modal.style.display = 'flex';
     });
-  </script>
+  });
 
-</body>
+  function closeModal() {
+    modal.style.display = 'none';
+  }
+</script></body>
 </html>
